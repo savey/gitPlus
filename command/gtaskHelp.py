@@ -14,11 +14,13 @@ class GtaskHelper(commandStrategy.AbstractCommandStrategy):
 
 	def useage(self, args):
 		var1=cmdDict.cmd
+		print("usage:")
 		for a in var1:
 			d=var1[a]
 			# #跳过本类，防止死掉了、~
 			if d.__class__ == __class__:
 				continue
 			d.useage(a)
+		print("祝你工作愉快！")
 		pass
 		

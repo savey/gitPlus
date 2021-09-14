@@ -12,5 +12,5 @@ class PrintBr(commandStrategy.AbstractCommandStrategy):
 
 
     def useage(self, args):
-        print(args)
+        print(args + "\t打印出当前所有分支，列表出索引号和描述")
         pass

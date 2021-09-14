@@ -28,5 +28,5 @@ class SwitchBranch(commandStrategy.AbstractCommandStrategy):
 
 
     def useage(self,args):
-        print(args)
+        print(args + "\t切换分支，可以输入具体的索引号！请正确输入哦！")
         pass

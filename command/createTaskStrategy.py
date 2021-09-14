@@ -42,5 +42,5 @@ class CreateTask(commandStrategy.AbstractCommandStrategy):
 
 
 	def useage(self, args):
-		print(args)
+		print(args + "\t创建任务、feature/hotfix分支，由具体提示输入即可！")
 		pass
