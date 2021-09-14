@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
-import sys
+import sys,signal
 import gtaskContext
 import getopt
 from support import parseError
+	
+
+def shutDown(signum, frame):
+  	print("\nGood Bay!!")
+  	exit()
+
+
+signal.signal(signal.SIGINT, shutDown)
+
+
 
 if __name__ == '__main__':
 	gtc = gtaskContext.GtaskContext(sys.argv)
