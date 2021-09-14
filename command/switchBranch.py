@@ -2,7 +2,7 @@ from . import commandStrategy
 import readline,os
 
 
-class SwitchBranch(commandStrategy.CommandStrategy):
+class SwitchBranch(commandStrategy.AbstractCommandStrategy):
 
     def __init__(self):
         super(SwitchBranch, self).__init__()
@@ -25,3 +25,7 @@ class SwitchBranch(commandStrategy.CommandStrategy):
             br=var1[b]
             CMD="git checkout %s" % br.branchName
             os.system(CMD)
+
+
+    def useage(self):
+        pass

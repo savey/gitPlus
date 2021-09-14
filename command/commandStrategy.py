@@ -1,9 +1,19 @@
 import os
+from abc import abstractmethod, ABCMeta
 from support import breancEntity
 
-class CommandStrategy(object):
-    """docstring for ClassName"""
+class AbstractCommandStrategy(object):
+    __meta_class__ = ABCMeta
+
+
     def __init__(self):
+        pass
+
+    """
+    每种命令的说明
+    """
+    @abstractmethod
+    def useage(self):
         pass
 
     """注释"""

@@ -1,7 +1,7 @@
 import sys,time,os
 from . import commandStrategy
 
-class CreateTask(commandStrategy.CommandStrategy):
+class CreateTask(commandStrategy.AbstractCommandStrategy):
 	"""创建分支任务"""
 	__args=["f", "h"]
 
@@ -39,3 +39,7 @@ class CreateTask(commandStrategy.CommandStrategy):
 		os.system(CMD)
 		if len(desc) > 0:
 			os.system("git config branch.%s.description %s" % (b, desc))
+
+
+	def useage(self):
+		pass
