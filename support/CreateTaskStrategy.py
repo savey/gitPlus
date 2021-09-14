@@ -26,11 +26,12 @@ class CreateTask(commandStrategy.CommandStrategy):
 
 
 	def __createBranch(self, type, name):
-		# date=
+		a=time.strftime("%Y%m%d-") + name
 		if type == 'f':
-			CMD="git checkout develop; git fetch origin develop:develop; git checkout -b hotfix/"
-			os.system();
+			CMD="git checkout develop; git fetch origin develop:develop; git checkout -b feature/%s" % a
+			os.system(CMD);
 			pass
-
 		if type == 'h':
+			CMD="git checkout master; git fetch origin master:master; git checkout -b hotfix/%s" % a
+			os.system(CMD);
 			pass
