@@ -1,8 +1,5 @@
 import sys,time,os
-sys.path.append("..") 
-import commandStrategy
-import readline
-
+from . import commandStrategy
 
 class CreateTask(commandStrategy.CommandStrategy):
 	"""创建分支任务"""

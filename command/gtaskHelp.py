@@ -1,7 +1,6 @@
 import sys
 import os
-sys.path.append("..") 
-import commandStrategy
+from . import commandStrategy
 
 class GtaskHelper(commandStrategy.CommandStrategy):
 	"""docstring for GitCmd"""

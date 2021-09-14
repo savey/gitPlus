@@ -1,6 +1,8 @@
 import sys, getopt
 sys.path.append("..") 
-import cmdDict,clientCommand
+import cmdDict
+from support import clientCommand
+
 
 class GtaskContext(object):
 	"""docstring for ClassName"""

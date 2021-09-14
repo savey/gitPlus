@@ -1,9 +1,5 @@
-import sys
-sys.path.append("..") 
-import commandStrategy
-import subprocess
 import os
-
+from . import commandStrategy
 
 class PrintBr(commandStrategy.CommandStrategy):
 	"""docstring for GitCmd"""

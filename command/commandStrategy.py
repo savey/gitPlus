@@ -1,4 +1,5 @@
 import os
+
 class CommandStrategy(object):
 	"""docstring for ClassName"""
 	def __init__(self):
