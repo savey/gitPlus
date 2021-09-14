@@ -37,9 +37,9 @@ class GtaskContext(object):
 			try:
 				index = var3.split("|").index(var1)
 			except Exception as e:
-				var3="git"
+				continue
 			if index == -99:
-				var3="git"
+				continue
 			s.append(clientCommand.ClientCommand(allCmd[var3], var2))
 		return s
 
