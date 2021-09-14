@@ -11,5 +11,6 @@ class PrintBr(commandStrategy.AbstractCommandStrategy):
         super().printAllBr(args)
 
 
-    def useage(self):
+    def useage(self, args):
+        print(args)
         pass

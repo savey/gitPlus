@@ -14,15 +14,14 @@ class GtaskContext(object):
 	def __parse(self):
 		var1=[]
 		args = self.__args[1:]
-		opts, args = getopt.getopt(args, "bc", ["help=","co"]);
+		opts, args = getopt.getopt(args, "bc", ["help","co"]);
 		allCmd=cmdDict.cmd
 		if len(opts) > 0:
 			for opt in opts:
 				var2=self.__getStrategy(opt, args, allCmd)
 				var1 = var1 + var2
 			return var1
-
-		var1.append(clientCommand.ClientCommand(allCmd["git"], " ".join(args)))
+		var1.append(clientCommand.ClientCommand(cmdDict.git["git"], " ".join(args)))
 		return var1
 
 

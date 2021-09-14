@@ -27,5 +27,6 @@ class SwitchBranch(commandStrategy.AbstractCommandStrategy):
             os.system(CMD)
 
 
-    def useage(self):
+    def useage(self,args):
+        print(args)
         pass

@@ -1,12 +1,19 @@
-from command import createTaskStrategy, gitCmdStrategy, printCurrentBrStrategy, gtaskHelp,switchBranch
+from command import printCurrentBrStrategy,gtaskHelp,createTaskStrategy,switchBranch,gitCmdStrategy
+
 
 """
-	这里配置下指令对应的命令解释器/目前只支持短标签 …………
+	这里配置下指令对应的命令解释器
 """
 cmd = {
-	"git": gitCmdStrategy.GitCmd(),
 	"-b": printCurrentBrStrategy.PrintBr(),
 	"--help": gtaskHelp.GtaskHelper(),
-	"-c": createTaskStrategy.CreateTask(),
-	"--co":switchBranch.SwitchBranch(),
+	"-c":createTaskStrategy.CreateTask(),
+    "--co":switchBranch.SwitchBranch()
+}
+
+"""
+特殊的配置，解析git的命令
+"""
+git = {
+    "git": gitCmdStrategy.GitCmd()
 }

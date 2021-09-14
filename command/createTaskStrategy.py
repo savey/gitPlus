@@ -41,5 +41,6 @@ class CreateTask(commandStrategy.AbstractCommandStrategy):
 			os.system("git config branch.%s.description %s" % (b, desc))
 
 
-	def useage(self):
+	def useage(self, args):
+		print(args)
 		pass

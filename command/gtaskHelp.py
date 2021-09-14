@@ -1,6 +1,5 @@
-import sys
-import os
 from . import commandStrategy
+import cmdDict
 
 class GtaskHelper(commandStrategy.AbstractCommandStrategy):
 	"""docstring for GitCmd"""
@@ -9,10 +8,17 @@ class GtaskHelper(commandStrategy.AbstractCommandStrategy):
 
 
 	def cmd(self, args):
-		br = os.system('/usr/bin/git branch')
+		self.useage(args)
 		pass
 
 
-	def useage(self):
+	def useage(self, args):
+		var1=cmdDict.cmd
+		for a in var1:
+			d=var1[a]
+			# #跳过本类，防止死掉了、~
+			if d.__class__ == __class__:
+				continue
+			d.useage(a)
 		pass
 		

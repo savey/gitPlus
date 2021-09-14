@@ -13,7 +13,7 @@ class AbstractCommandStrategy(object):
     每种命令的说明
     """
     @abstractmethod
-    def useage(self):
+    def useage(self, args):
         pass
 
     """注释"""
