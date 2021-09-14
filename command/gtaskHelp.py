@@ -21,6 +21,6 @@ class GtaskHelper(commandStrategy.AbstractCommandStrategy):
 			if d.__class__ == __class__:
 				continue
 			d.useage(a)
-		print("祝你工作愉快！")
+		print("祝你工作愉快！🥂🥂")
 		pass
 		
