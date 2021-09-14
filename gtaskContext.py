@@ -15,7 +15,7 @@ class GtaskContext(object):
 	def __parse(self):
 		var1=[]
 		args = self.__args[1:]
-		opts, args = getopt.getopt(args, "bc", ["help="]);
+		opts, args = getopt.getopt(args, "bc", ["help=","co"]);
 		allCmd=cmdDict.cmd
 		if len(opts) > 0:
 			for opt in opts:
