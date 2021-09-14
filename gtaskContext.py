@@ -1,5 +1,4 @@
-import sys, getopt
-sys.path.append("..") 
+import getopt
 import cmdDict
 from support import clientCommand
 
