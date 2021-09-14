@@ -27,7 +27,7 @@ class GtaskContext(object):
 		return var1
 
 
-	"""通过解析出来的opt通过配置的cmd 匹配出来"""
+	"""通过解析出来的opt通过配置的cmd 匹配出来  args这个参数，暂时没有想好怎么用？？？"""
 	def __getStrategy(self, opt, args, allCmd):
 		var1   = opt[0]
 		var2   = opt[1]
