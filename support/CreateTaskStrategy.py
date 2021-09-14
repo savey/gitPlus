@@ -19,19 +19,26 @@ class CreateTask(commandStrategy.CommandStrategy):
 		for c in self.__args:
 			if b == c:
 				e = input("\033[32;6mInput task name. demo: tapd-{id}:")
-				self.__createBranch(b, e)
+				d = input("\033[32;6mInput task desc:")
+				self.__createBranch(b, e, d)
 				return
 		
 		self.cmd(a)
 
 
-	def __createBranch(self, type, name):
+	def __createBranch(self, type, name, desc):
 		a=time.strftime("%Y%m%d-") + name
+		CMD=""
+		b=""
 		if type == 'f':
-			CMD="git checkout develop; git fetch origin develop:develop; git checkout -b feature/%s" % a
-			os.system(CMD);
+			b="feature/%s" % a
+			CMD="git checkout develop; git fetch origin develop:develop; git checkout -b " + b
 			pass
 		if type == 'h':
-			CMD="git checkout master; git fetch origin master:master; git checkout -b hotfix/%s" % a
-			os.system(CMD);
+			b="hotfix/%s" % a
+			CMD="git checkout master; git fetch origin master:master; git checkout -b " + b
 			pass
+
+		os.system(CMD)
+		if len(desc) > 0:
+			os.system("git config branch.%s.description %s" % (b, desc))
