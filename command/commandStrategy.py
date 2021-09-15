@@ -24,7 +24,7 @@ class AbstractCommandStrategy(object):
     def printAllBr(self, args):
         allBr=self.getAllbrs(args)
         for br in allBr:
-            print("\033[32;6m[%03d] - %s\033[0m %s" % (br.index, br.branchName, "##" + br.desc if len(br.desc) > 0 else ""))
+            print(br.toString())
 
     """
     把所有的分支组成数组对象
