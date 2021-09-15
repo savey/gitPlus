@@ -4,6 +4,8 @@
 # 依赖
 - python3
 
+# 安装环境配置
+
 # 支持的系统
 - MacOs
 - Unix/Linux
@@ -11,5 +13,6 @@
 # 注意事项
 ```
 chmod u+x main.py
-alias <yourCommand>=<path/main.py>
+echo "alias <yourCommand>=<path/main.py>" >> ~/.bash_profile
+source ~/.bash_profile
 ```
