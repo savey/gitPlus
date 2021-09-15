@@ -16,7 +16,7 @@ class CreateTask(commandStrategy.AbstractCommandStrategy):
 		for c in self.__args:
 			if b == c:
 				e = input("\033[32;6mInput task name. demo: tapd-{id}:")
-				d = input("\033[32;6mInput task desc:")
+				d = input("\033[32;6mInput task desc:\033[0m")
 				self.__createBranch(b, e, d)
 				return
 		
