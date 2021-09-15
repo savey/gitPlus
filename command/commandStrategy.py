@@ -45,6 +45,14 @@ class AbstractCommandStrategy(object):
 
         return var5
 
+    """
+    获取当前分支的名字
+    """
+    def showCurrentBr(self):
+        return self.__cmdWithReturn("branch", "--show-current")
+
+
+
     def __cmdWithReturn(self, opt, args):
         shellOpt='/usr/bin/git %s %s' % (opt, args)
         p=os.popen(shellOpt)
