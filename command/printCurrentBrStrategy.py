@@ -1,4 +1,3 @@
-import os
 from . import commandStrategy
 
 class PrintBr(commandStrategy.AbstractCommandStrategy):
