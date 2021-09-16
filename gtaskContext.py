@@ -1,5 +1,5 @@
 import getopt
-import cmdDict
+import Config
 from support import clientCommand
 
 
@@ -15,13 +15,13 @@ class GtaskContext(object):
 		var1=[]
 		args = self.__args[1:]
 		opts, args = getopt.getopt(args, "bc", ["help","co","desc="]);
-		allCmd=cmdDict.cmd
+		allCmd=Config.keyCommand()
 		if len(opts) > 0:
 			for opt in opts:
 				var2=self.__getStrategy(opt, args, allCmd)
 				var1 = var1 + var2
 			return var1
-		var1.append(clientCommand.ClientCommand(cmdDict.git["git"], " ".join(args)))
+		var1.append(clientCommand.ClientCommand(Config.git["git"], " ".join(args)))
 		return var1
 
 
@@ -30,17 +30,12 @@ class GtaskContext(object):
 		var1   = opt[0]
 		var2   = opt[1]
 		s=[]
-		for var3 in allCmd:
-			if var3 == 'git':
-				continue
-			index = -99
+		for sysCmd in allCmd:
 			try:
-				index = var3.split("|").index(var1)
+				sysCmd.command().split("|").index(var1)
+				s.append(clientCommand.ClientCommand(sysCmd, var2))
 			except Exception as e:
 				continue
-			if index == -99:
-				continue
-			s.append(clientCommand.ClientCommand(allCmd[var3], var2))
 		return s
 
 

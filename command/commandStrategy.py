@@ -9,14 +9,24 @@ class AbstractCommandStrategy(object):
     def __init__(self):
         pass
 
+
+    """
+    存入指令的实现方法
+    """
+    @abstractmethod
+    def command(self):
+        pass
+
+
     """
     每种命令的说明
     """
     @abstractmethod
-    def useage(self, args):
+    def useage(self):
         pass
 
     """注释"""
+    @abstractmethod
     def cmd(self, args):
         pass
 

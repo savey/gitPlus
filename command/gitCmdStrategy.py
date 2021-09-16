@@ -2,15 +2,12 @@ import os
 from . import commandStrategy
 
 class GitCmd(commandStrategy.AbstractCommandStrategy):
-	"""docstring for GitCmd"""
-	def __init__(self):
-		super(GitCmd, self).__init__()
 
+    def command(self):
+        return "git"
 
-	def cmd(self, args):
-		os.system('/usr/bin/git %s' % args)
-		pass
+    def cmd(self, args):
+        os.system('/usr/bin/git %s' % args)
 
-
-	def useage(self):
-		pass
+    def useage(self):
+        pass

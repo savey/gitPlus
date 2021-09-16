@@ -4,9 +4,9 @@ import readline,os
 
 class SwitchBranch(commandStrategy.AbstractCommandStrategy):
 
-    def __init__(self):
-        super(SwitchBranch, self).__init__()
 
+    def command(self):
+        return "--co"
 
     """
     选择分支、由索引、或者分支名、来切换到对应的分支
@@ -27,6 +27,6 @@ class SwitchBranch(commandStrategy.AbstractCommandStrategy):
             os.system(CMD)
 
 
-    def useage(self,args):
-        print(args + "\t切换分支，可以输入具体的索引号！请正确输入哦！")
+    def useage(self):
+        print(self.command() + "\t切换分支，可以输入具体的索引号！请正确输入哦！")
         pass

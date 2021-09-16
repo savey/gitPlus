@@ -5,9 +5,11 @@ class CreateTask(commandStrategy.AbstractCommandStrategy):
 	"""创建分支任务"""
 	__args=["f", "h"]
 
-	
 	def __init__(self):
 		super(CreateTask, self).__init__()
+
+	def command(self):
+		return "-c";
 
 
 	def cmd(self, args):
@@ -41,6 +43,6 @@ class CreateTask(commandStrategy.AbstractCommandStrategy):
 			os.system("git config branch.%s.description %s" % (b, desc))
 
 
-	def useage(self, args):
-		print(args + "\t创建任务、feature/hotfix分支，由具体提示输入即可！")
+	def useage(self):
+		print(self.command() + "\t创建任务、feature/hotfix分支，由具体提示输入即可！")
 		pass

@@ -4,6 +4,9 @@ import os
 
 class EditBrDesc(commandStrategy.AbstractCommandStrategy):
 
+    def command(self):
+        return "--desc";
+
 
     def cmd(self, args):
         if len(args) <= 0:
@@ -15,6 +18,6 @@ class EditBrDesc(commandStrategy.AbstractCommandStrategy):
         pass
 
 
-    def useage(self, args):
-        print(args + "\t为当前分支打上描述、--desc=<description> or --desc <description>")
+    def useage(self):
+        print(self.command() + "\t为当前分支打上描述、--desc=<description> or --desc <description>")
         pass
