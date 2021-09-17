@@ -1,4 +1,5 @@
-from command import printCurrentBrStrategy,gtaskHelp,createTaskStrategy,switchBranch,gitCmdStrategy,editBrDesc
+from command import printCurrentBrStrategy,gtaskHelp,createTaskStrategy,switchBranch,gitCmdStrategy,editBrDesc, \
+	merge
 
 """
 	这里配置下指令对应的命令解释器
@@ -9,6 +10,7 @@ def keyCommand():
 		yield createTaskStrategy.CreateTask()
 		yield switchBranch.SwitchBranch()
 		yield editBrDesc.EditBrDesc()
+		yield merge.merge()
 
 
 
