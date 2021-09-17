@@ -2,7 +2,7 @@ from . import commandStrategy
 from support import parseError
 import os
 
-class merge(commandStrategy.AbstractCommandStrategy):
+class Merge(commandStrategy.AbstractCommandStrategy):
 
     def command(self):
         return "-m";

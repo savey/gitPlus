@@ -10,7 +10,7 @@ def keyCommand():
 		yield createTaskStrategy.CreateTask()
 		yield switchBranch.SwitchBranch()
 		yield editBrDesc.EditBrDesc()
-		yield merge.merge()
+		yield merge.Merge()
 
 
 
