@@ -1,5 +1,5 @@
 from . import commandStrategy
-import Config
+import plusConfig
 
 class GtaskHelper(commandStrategy.AbstractCommandStrategy):
 
@@ -14,7 +14,7 @@ class GtaskHelper(commandStrategy.AbstractCommandStrategy):
 
 
     def useage(self):
-        var1 = Config.keyCommand()
+        var1 = plusConfig.keyCommand()
         print("usage:")
         for a in var1:
             # #跳过本类，防止死掉了、~

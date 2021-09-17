@@ -1,5 +1,5 @@
 import getopt
-import Config
+import plusConfig
 from support import clientCommand
 
 
@@ -15,13 +15,13 @@ class GtaskContext(object):
 		var1=[]
 		args = self.__args[1:]
 		opts, args = getopt.getopt(args, "bc", ["help","co","desc="]);
-		allCmd=Config.keyCommand()
+		allCmd=plusConfig.keyCommand()
 		if len(opts) > 0:
 			for opt in opts:
 				var2=self.__getStrategy(opt, args, allCmd)
 				var1 = var1 + var2
 			return var1
-		var1.append(clientCommand.ClientCommand(Config.git["git"], " ".join(args)))
+		var1.append(clientCommand.ClientCommand(plusConfig.git["git"], " ".join(args)))
 		return var1
 
 
