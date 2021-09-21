@@ -20,9 +20,9 @@ if __name__ == '__main__':
 		gtc = gtaskContext.GtaskContext(sys.argv)
 		gtc.command()
 		pass
-	except getopt.GetoptError as e:
-		print(e.args)
-	except Exception as e:
-		print(e)
-	except parseError.ParseError as e:
-		print(e.args)
+	except getopt.GetoptError as e1:
+		print(e1.args)
+	except parseError.ParseError as e2:
+		print(e2)
+	except Exception as e3:
+		print(e3.args)
