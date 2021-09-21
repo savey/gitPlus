@@ -26,5 +26,5 @@ class Del(commandStrategy.AbstractCommandStrategy):
 
 
     def useage(self):
-        print(self.command() + "\删除某个分支、不可用于删除Master分支，若删除Master分支，请用原生的命令！")
+        print(self.command() + "\t删除某个分支、不可用于删除Master分支，若删除Master分支，请用原生的命令！")
         pass
