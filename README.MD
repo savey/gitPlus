@@ -3,6 +3,7 @@
 
 # 依赖
 - python3
+- git
 
 # 安装环境配置
 
@@ -11,7 +12,9 @@
 - Unix/Linux
 
 # 注意事项
+## 下载安装
 ```
+git clone 本项目
 chmod u+x main.py
 echo "alias <yourCommand>=<path/main.py>" >> ~/.bash_profile
 source ~/.bash_profile
