@@ -1,5 +1,5 @@
 from command import printCurrentBrStrategy,gtaskHelp,createTaskStrategy,switchBranch,gitCmdStrategy,editBrDesc, \
-	merge
+	merge, status
 
 """
 	这里配置下指令对应的命令解释器
@@ -11,7 +11,7 @@ def keyCommand():
 		yield switchBranch.SwitchBranch()
 		yield editBrDesc.EditBrDesc()
 		yield merge.Merge()
-
+		yield status.Status()
 
 
 """

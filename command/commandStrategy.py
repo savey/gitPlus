@@ -41,7 +41,7 @@ class AbstractCommandStrategy(object):
     """
     def getAllbrs(self, args):
         var1 = args + " | git branch | sed -e 's/*/ /' -e 's/ //'"
-        var2 = self.__cmdWithReturn("branch", var1)
+        var2 = self.cmdWithReturn("branch", var1)
         var4 = var2.replace(" ", "").split("\n")
         i = 1;
         var5 = []
@@ -49,7 +49,7 @@ class AbstractCommandStrategy(object):
             if len(b) == 0:
                 continue
             # 打印desc
-            _brdesc = self.__cmdWithReturn("config", "branch.%s.description" % b).replace("\n", "")
+            _brdesc = self.cmdWithReturn("config", "branch.%s.description" % b).replace("\n", "")
             i = i + 1
             var5.append(breancEntity.BrEntity(i - 1, b, _brdesc))
 
@@ -59,11 +59,11 @@ class AbstractCommandStrategy(object):
     获取当前分支的名字
     """
     def showCurrentBr(self):
-        return self.__cmdWithReturn("branch", "--show-current")
+        return self.cmdWithReturn("branch", "--show-current")
 
 
 
-    def __cmdWithReturn(self, opt, args):
+    def cmdWithReturn(self, opt, args):
         shellOpt='/usr/bin/git %s %s' % (opt, args)
         p=os.popen(shellOpt)
         r=p.read()
