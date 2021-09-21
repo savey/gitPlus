@@ -14,7 +14,7 @@ class GtaskContext(object):
 	def __parse(self):
 		var1=[]
 		args = self.__args[1:]
-		opts, args = getopt.getopt(args, "bcms", ["help","co","desc="]);
+		opts, args = getopt.getopt(args, plusConfig.shortOpts, plusConfig.longOpts);
 		allCmd=plusConfig.keyCommand()
 		if len(opts) > 0:
 			for opt in opts:
