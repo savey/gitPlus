@@ -3,7 +3,7 @@ from . import commandStrategy
 
 class CreateTask(commandStrategy.AbstractCommandStrategy):
 	"""创建分支任务"""
-	__args=["f", "h"]
+	__args=["f", "h", "n"]
 
 	def __init__(self):
 		super(CreateTask, self).__init__()
@@ -13,7 +13,7 @@ class CreateTask(commandStrategy.AbstractCommandStrategy):
 
 
 	def cmd(self, args):
-		a = input("\033[32;6mCreate Feature/Hotfix. Please Key[F/H]:")
+		a = input("\033[32;6mCreate Feature/Hotfix/Normal. Please Key[F/H/N]:")
 		b = a.lower();
 		for c in self.__args:
 			if b == c:
@@ -37,12 +37,14 @@ class CreateTask(commandStrategy.AbstractCommandStrategy):
 			b="hotfix/%s" % a
 			CMD="git checkout master; git fetch origin master:master -u; git checkout -b " + b
 			pass
-
+		if type == "n":
+			CMD="git checkout -b " + a
+			pass
 		os.system(CMD)
 		if len(desc) > 0:
 			os.system("git config branch.%s.description %s" % (b, desc))
 
 
 	def useage(self):
-		print(self.command() + "\t创建任务、feature/hotfix分支，由具体提示输入即可！")
+		print(self.command() + "\t创建feature/hotfix/普通分支，分别基于(develop/master/当前分支)创建！由具体提示输入即可！")
 		pass
