@@ -31,11 +31,11 @@ class CreateTask(commandStrategy.AbstractCommandStrategy):
 		b=""
 		if type == 'f':
 			b="feature/%s" % a
-			CMD="git checkout develop; git fetch origin develop:develop; git checkout -b " + b
+			CMD="git checkout develop; git fetch origin develop:develop -u; git checkout -b " + b
 			pass
 		if type == 'h':
 			b="hotfix/%s" % a
-			CMD="git checkout master; git fetch origin master:master; git checkout -b " + b
+			CMD="git checkout master; git fetch origin master:master -u; git checkout -b " + b
 			pass
 
 		os.system(CMD)
