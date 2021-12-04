@@ -16,6 +16,6 @@
 ```
 git clone 本项目
 chmod u+x main.py
-echo "alias <yourCommand>=<path/main.py>" >> ~/.bash_profile
+echo "alias g=<path/main.py>" >> ~/.bash_profile
 source ~/.bash_profile
 ```
